@@ -1,0 +1,9 @@
+#include <iostream>
+#include <clocale>
+using namespace std;
+
+int main(void){
+   	setlocale(LC_ALL, "Spanish");
+
+	return 0;
+}
