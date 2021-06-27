@@ -4,6 +4,35 @@ using namespace std;
 
 int main(void){
    	setlocale(LC_ALL, "Spanish");
+	
+	int num;
+	
+	cout << "MATHRIX" << endl;
+	cout << "---------------------" << endl;
+	cout << "1 - JUGAR" << endl;
+	cout << "2 - ESTADÍSTICAS" << endl;
+	cout << "3 - CRÉDITOS" << endl;
+	cout << "---------------------" << endl;
+	cout << "0 - SALIR" << endl << endl;
+	
+	cin >> num;
+	
+	while(num!=0){
+		if(num == 1){
+			jugar()
+		}
+		else{
+			if(num == 2){
+				estadisticas()
+			}
+			else{
+				if(num == 3){
+					creditos()
+				}
+			}
+		}
+		cin >> num;
+	}
 
 	return 0;
 }
