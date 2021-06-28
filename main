@@ -12,7 +12,7 @@ int main(void){
    	srand(time(NULL));
 
 	int num, salir=1, puntaje=0;
-	char rta[3], afirmativo[3]={'s','i'}, nombre[20]={'n'}; // La inicialización de nombre[20] va a depender de lo que pase en "JUGAR"
+	char rta[3], afirmativo[3]={'s','i'}, nombre[20];
 
 	while(salir!=0){
         rlutil::cls();
@@ -22,15 +22,13 @@ int main(void){
 
 		if(num == 1){
             rlutil::cls();
-			cout << endl << "  JUGAR" << endl;
-			cout << endl << "  Acá va desarrollado todo el juego - ¡CHAN!" << endl; // Esto se elimina.
-			cout << endl << "  Para volver al menú, apretá alguna tecla";
+            jugar(&puntaje, nombre); // El & es porque es por referencia
             rlutil::anykey();
 		}
 		else{
 			if(num == 2){
                 rlutil::cls();
-               // estadisticas(puntaje, 'nombre'); // Falta conectar "puntaje / nombre" con lo que da la función "JUGAR".
+                estadisticas(puntaje, nombre);
                 rlutil::anykey();
 			}
 			else{
@@ -62,3 +60,4 @@ int main(void){
 
 	return 0;
 }
+
