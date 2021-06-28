@@ -1,55 +1,58 @@
 #include <iostream>
 #include <clocale>
 using namespace std;
-#include <cstring>
+#include "funciones.h" // Nuestro archivo de funciones
+#include <cstring> // Para laburar/comparar las cadenas de texto
+#include <ctime> // Es la librería del 'tiempo'. Sirve para disponer del dato de la fecha y hora para generar un primer número aleatorio. Se va a usar para los números de la matriz
+#include "rlutil.h" // La librería para poner bonita la consola
 
 int main(void){
    	setlocale(LC_ALL, "Spanish");
 
-	int num, salir=1;
-	char rta[3], afirmativo[3]={'s','i'};
+   	srand(time(NULL));
 
-	cout << "MATHRIX" << endl;
-	cout << "---------------------" << endl;
-	cout << "1 - JUGAR" << endl;
-	cout << "2 - ESTADÍSTICAS" << endl;
-	cout << "3 - CRÉDITOS" << endl;
-	cout << "---------------------" << endl;
-	cout << "0 - SALIR" << endl << endl << endl;
-
-	cout << "¡Bienvenido/a!";
+	int num, salir=1, puntaje=0;
+	char rta[3], afirmativo[3]={'s','i'}, nombre[20]={'n'}; // La inicialización de nombre[20] va a depender de lo que pase en "JUGAR"
 
 	while(salir!=0){
-        cout << endl << "Por favor elegí la opción que quieras realizar: ";
+        rlutil::cls();
+        menu();
+        cout << endl << "  Por favor elegí la opción que quieras realizar: ";
         cin >> num;
 
 		if(num == 1){
-			cout << endl << "ELEGISTE JUGAR" << endl;
-			// jugar();
+            rlutil::cls();
+			cout << endl << "  JUGAR" << endl;
+			cout << endl << "  Acá va desarrollado todo el juego - ¡CHAN!" << endl; // Esto se elimina.
+			cout << endl << "  Para volver al menú, apretá alguna tecla";
+            rlutil::anykey();
 		}
 		else{
 			if(num == 2){
-                cout << endl << "ELEGISTE ESTADÍSTICAS" << endl;
-				// estadisticas();
+                rlutil::cls();
+               // estadisticas(puntaje, 'nombre'); // Falta conectar "puntaje / nombre" con lo que da la función "JUGAR".
+                rlutil::anykey();
 			}
 			else{
 				if(num == 3){
-				    cout << endl << "ELEGISTE CRÉDITOS" << endl;
-					// creditos();
+                    rlutil::cls();
+                    creditos();
+                    rlutil::anykey();
 				}
 				else{
                     if(num == 0){
-                        cout << endl << "¿Estás seguro que querés salir? (escribir si - no): ";
+                        rlutil::cls();
+                        cout << endl << "  ¿Estás seguro que querés salir? (escribir si - no): ";
                         cin >> rta;
                         salir = strcasecmp(rta, afirmativo);
 
                         if(salir==0){
-                            cout << endl << endl << "Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
+                            rlutil::cls();
+                            cout << endl << "  Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
                         }
                         else{
-                            cout << endl << "¡Que bueno que decidiste quedarte!" << endl;
-                            cout << "Elegí la nueva opción que quieras realizar: ";
-                            cin >> num;
+                            rlutil::cls();
+                            cout << endl << "  ¡Que bueno que decidiste quedarte!" << endl;
                         }
                     }
 				}
