@@ -6,7 +6,7 @@ using namespace std;
 int main(void){
    	setlocale(LC_ALL, "Spanish");
 
-	int num, salir;
+	int num, salir=1;
 	char rta[3], afirmativo[3]={'s','i'};
 
 	cout << "MATHRIX" << endl;
@@ -15,12 +15,14 @@ int main(void){
 	cout << "2 - ESTADÍSTICAS" << endl;
 	cout << "3 - CRÉDITOS" << endl;
 	cout << "---------------------" << endl;
-	cout << "0 - SALIR" << endl << endl;
+	cout << "0 - SALIR" << endl << endl << endl;
 
-	cout << "¡Bienvenido/a! Por favor elegí la opción que quieras realizar: ";
-	cin >> num;
+	cout << "¡Bienvenido/a!";
 
-	while(num!=0){
+	while(salir!=0){
+        cout << endl << "Por favor elegí la opción que quieras realizar: ";
+        cin >> num;
+
 		if(num == 1){
 			cout << endl << "ELEGISTE JUGAR" << endl;
 			// jugar();
@@ -35,27 +37,23 @@ int main(void){
 				    cout << endl << "ELEGISTE CRÉDITOS" << endl;
 					// creditos();
 				}
+				else{
+                    if(num == 0){
+                        cout << endl << "¿Estás seguro que querés salir? (escribir si - no): ";
+                        cin >> rta;
+                        salir = strcasecmp(rta, afirmativo);
+
+                        if(salir==0){
+                            cout << endl << endl << "Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
+                        }
+                        else{
+                            cout << endl << "¡Que bueno que decidiste quedarte!" << endl;
+                            cout << "Elegí la nueva opción que quieras realizar: ";
+                            cin >> num;
+                        }
+                    }
+				}
 			}
-		}
-
-		cout << endl << "Por favor elegí la opción que quieras realizar: ";
-		cin >> num;
-
-		if(num==0){
-            cout << endl << "¿Estás seguro que querés salir? (escribir si - no): ";
-            cin >> rta;
-            salir = strcasecmp(rta, afirmativo);
-
-            if(salir==0){
-                num = 0;
-                cout << endl << endl << "Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
-            }
-            else{
-                cout << endl << "¡Que bueno que decidiste quedarte!" << endl;
-                cout << "Elegí la nueva opción que quieras realizar: ";
-                cin >> num;
-            }
-
 		}
 	}
 
