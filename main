@@ -1,12 +1,14 @@
 #include <iostream>
 #include <clocale>
 using namespace std;
+#include <cstring>
 
 int main(void){
    	setlocale(LC_ALL, "Spanish");
-	
-	int num;
-	
+
+	int num, salir;
+	char rta[3], afirmativo[3]={'s','i'};
+
 	cout << "MATHRIX" << endl;
 	cout << "---------------------" << endl;
 	cout << "1 - JUGAR" << endl;
@@ -14,24 +16,47 @@ int main(void){
 	cout << "3 - CRÉDITOS" << endl;
 	cout << "---------------------" << endl;
 	cout << "0 - SALIR" << endl << endl;
-	
+
+	cout << "¡Bienvenido/a! Por favor elegí la opción que quieras realizar: ";
 	cin >> num;
-	
+
 	while(num!=0){
 		if(num == 1){
-			jugar()
+			cout << endl << "ELEGISTE JUGAR" << endl;
+			// jugar();
 		}
 		else{
 			if(num == 2){
-				estadisticas()
+                cout << endl << "ELEGISTE ESTADÍSTICAS" << endl;
+				// estadisticas();
 			}
 			else{
 				if(num == 3){
-					creditos()
+				    cout << endl << "ELEGISTE CRÉDITOS" << endl;
+					// creditos();
 				}
 			}
 		}
+
+		cout << endl << "Por favor elegí la opción que quieras realizar: ";
 		cin >> num;
+
+		if(num==0){
+            cout << endl << "¿Estás seguro que querés salir? (escribir si - no): ";
+            cin >> rta;
+            salir = strcasecmp(rta, afirmativo);
+
+            if(salir==0){
+                num = 0;
+                cout << endl << endl << "Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
+            }
+            else{
+                cout << endl << "¡Que bueno que decidiste quedarte!" << endl;
+                cout << "Elegí la nueva opción que quieras realizar: ";
+                cin >> num;
+            }
+
+		}
 	}
 
 	return 0;
