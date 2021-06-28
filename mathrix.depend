@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1624912584 source:c:\users\natal\documents\natalí\utn\cuatrimestre 1\lab comp i\ii parcial\mathrix\main.cpp
+	<iostream>
+	<clocale>
+	"funciones.h"
+	<cstring>
+	<ctime>
+	"rlutil.h"
+
+1624912963 c:\users\natal\documents\natalí\utn\cuatrimestre 1\lab comp i\ii parcial\mathrix\funciones.h
+
+1624883742 c:\users\natal\documents\natalí\utn\cuatrimestre 1\lab comp i\ii parcial\mathrix\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624912429 source:c:\users\natal\documents\natalí\utn\cuatrimestre 1\lab comp i\ii parcial\mathrix\funciones.cpp
+	<iostream>
+	<clocale>
+	"funciones.h"
+	<cstring>
+	<ctime>
+	"rlutil.h"
+
+1624911122 source:c:\users\natal\documents\natalí\utn\cuatrimestre 1\lab comp i\ii parcial\mathrix\jugar.cpp
+	<iostream>
+	<clocale>
+	"funciones.h"
+	<cstring>
+	<ctime>
+	"rlutil.h"
+
