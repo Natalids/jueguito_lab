@@ -58,7 +58,7 @@ void matrizAleatoria(int matriz[][6], int tam){
     int i, x;
     for (i=0; i<6; i++){
         for (x=0; x<6; x++){
-            matriz[i][x] = rand()%9+1;
+            matriz[i][x] = rand()%10;
         }
     }
 }
@@ -207,25 +207,28 @@ int salirseMatriz(int fila, int columna, int direccion, int *afuera){
 
 int celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccion, int *negativo){
     if(direccion == 8){
-        if(matriz[fila][columna] = -1 || matriz[fila-1][columna] = -1 || matriz[fila-2][columna] = -1){
+        /*num1 = matriz[fila][columna];
+        num2 = matriz[fila-1][columna];
+        num3 = matriz[fila-2][columna];*/
+        if(matriz[fila][columna] == -1 || matriz[fila-1][columna] == -1 || matriz[fila-2][columna] == -1){
            *negativo = 1;
         }
     }
     else{
         if(direccion == 2){
-            if(matriz[fila][columna] = -1 || matriz[fila+1][columna] = -1 || matriz[fila+2][columna] = -1){
+            if(matriz[fila][columna] == -1 || matriz[fila+1][columna] == -1 || matriz[fila+2][columna] == -1){
             *negativo = 1;
             }
         }
         else{
             if(direccion == 4){
-                if(matriz[fila][columna] = -1 ||matriz[fila][columna-1] = -1 || matriz[fila][columna-2] = -1){
+                if(matriz[fila][columna] == -1 ||matriz[fila][columna-1] == -1 || matriz[fila][columna-2] == -1){
                     *negativo = 1;
                 }
             }
             else{
                 if(direccion == 6){
-                    if(matriz[fila][columna] = -1 || matriz[fila][columna+1] = -1 || matriz[fila][columna+2] = -1){
+                    if(matriz[fila][columna] == -1 || matriz[fila][columna+1] == -1 || matriz[fila][columna+2] == -1){
                         *negativo = 1;
                     }
                 }
@@ -233,3 +236,4 @@ int celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccio
         }
     }
 }
+
