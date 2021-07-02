@@ -36,8 +36,9 @@ int jugar(int *puntaje, char *nombre){
             cout << endl << "  Apretá alguna tecla para continuar.";
             pilas--;
             rlutil::anykey();
-        }else{
-            celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccion, int &negativo);
+        }
+        else{
+            celdaNegativo(matriz, 6, fila, columna, direccion, &negativo);
             if(negativo == 1){
                 cout << endl << "  Estás queriendo usar una celda bloqueada ('-1'). Perdiste una pila.";
                 cout << endl << "  Apretá alguna tecla para continuar.";
@@ -53,7 +54,7 @@ int jugar(int *puntaje, char *nombre){
                     rlutil::anykey();
                 }
                 else{
-                    cout << endl << "  ¡Muy bien hecho! Acabas de sumar " << *puntaje << " puntos.";
+                    cout << endl << "  ¡Muy bien hecho! Acabas de sumar puntos.";
                     cout << endl << "  Apretá alguna tecla para continuar.";
                     rlutil::anykey();
                     *puntaje += acumular;
