@@ -17,3 +17,4 @@ int salirseMatriz(int, int, int, int *);
 int celdaNegativo(int [][6], int, int, int, int, int *);
 
 #endif // FUNCIONES_H_INCLUDED
+
