@@ -8,7 +8,7 @@ using namespace std;
 
 int jugar(int *puntaje, char *nombre){
     char jugador[20], calculadora[20];
-    int matriz[6][6], pilas=3, ronda=1, fila, columna, direccion, acumular, primerNumero, segundoNumero, tercerNumero, afuera, negativo;
+    int matriz[6][6], pilas=3, ronda=1, fila, columna, direccion, acumular, primerNumero, segundoNumero, tercerNumero, afuera=0, negativo=0;
     char operador;
 
     cout << endl << "  JUGAR" << endl;
@@ -25,12 +25,11 @@ int jugar(int *puntaje, char *nombre){
     datos(jugador, calculadora, pilas, ronda, *puntaje);
 
     while(pilas!=0){
-        afuera = 0;
-        negativo = 0;
         imprimirMatriz(matriz, 6);
         ingresoDatos(&fila, &columna, &operador, &direccion);
         direcciones(matriz, 6, direccion, fila, columna, &primerNumero, &segundoNumero, &tercerNumero);
         salirseMatriz(fila, columna, direccion, &afuera);
+        cout << "  Imprimiento 'arafue' antes del IF " << afuera << endl;
         if(afuera == 1){
             cout << endl << "  Con ese movimiento te salís de la matriz. Perdiste una pila.";
             cout << endl << "  Apretá alguna tecla para continuar.";
