@@ -185,31 +185,15 @@ int cambioCeldas(int matriz [][6], int tam, int fila, int columna, int direccion
 }
 
 int salirseMatriz(int fila, int columna, int direccion, int *afuera){
-    if(fila==1 && direccion==8 || fila==2 && direccion==8){
+    if(fila==0 && direccion==8 || fila==1 && direccion==8 || fila==4 && direccion==2 || fila==5 && direccion==2
+       || columna==0 && direccion==4 || columna==1 && direccion==4 || columna==4 && direccion==6 || columna==5 && direccion==6){
         *afuera = 1;
-    }
-    else{
-        if(fila==5 && direccion==2 || fila==6 && direccion==2){
-            *afuera = 1;
-        }
-        else{
-            if(columna==1 && direccion==4 || columna==2 && direccion==4){
-                *afuera = 1;
-            }
-            else{
-                if(columna==5 && direccion==6 || columna==6 && direccion==6){
-                    *afuera = 1;
-                }
-            }
-        }
     }
 }
 
 int celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccion, int *negativo){
+
     if(direccion == 8){
-        /*num1 = matriz[fila][columna];
-        num2 = matriz[fila-1][columna];
-        num3 = matriz[fila-2][columna];*/
         if(matriz[fila][columna] == -1 || matriz[fila-1][columna] == -1 || matriz[fila-2][columna] == -1){
            *negativo = 1;
         }
@@ -222,7 +206,7 @@ int celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccio
         }
         else{
             if(direccion == 4){
-                if(matriz[fila][columna] == -1 ||matriz[fila][columna-1] == -1 || matriz[fila][columna-2] == -1){
+                if(matriz[fila][columna] == -1 || matriz[fila][columna-1] == -1 || matriz[fila][columna-2] == -1){
                     *negativo = 1;
                 }
             }
@@ -236,4 +220,3 @@ int celdaNegativo(int matriz [][6], int tam, int fila, int columna, int direccio
         }
     }
 }
-
