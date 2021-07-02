@@ -1,10 +1,10 @@
 #include <iostream>
 #include <clocale>
 using namespace std;
-#include "funciones.h" // Nuestro archivo de funciones
-#include <cstring> // Para laburar/comparar las cadenas de texto
-#include <ctime> // Es la librería del 'tiempo'. Sirve para disponer del dato de la fecha y hora para generar un primer número aleatorio. Se va a usar para los números de la matriz
-#include "rlutil.h" // La librería para poner bonita la consola
+#include "funciones.h"
+#include <cstring>
+#include <ctime>
+#include "rlutil.h"
 
 int main(void){
    	setlocale(LC_ALL, "Spanish");
@@ -17,12 +17,12 @@ int main(void){
 	while(salir!=0){
         rlutil::cls();
         menu();
-        cout << endl << "  Por favor elegí la opción que quieras realizar: ";
+        cout << endl << "  Por favor elegÃ­ la opciÃ³n que quieras realizar: ";
         cin >> num;
 
 		if(num == 1){
             rlutil::cls();
-            jugar(&puntaje, nombre); // El & es porque es por referencia
+            jugar(&puntaje, nombre);
             rlutil::anykey();
 		}
 		else{
@@ -41,17 +41,17 @@ int main(void){
 				else{
                     if(num == 0){
                         rlutil::cls();
-                        cout << endl << "  ¿Estás seguro que querés salir? (escribir si - no): ";
+                        cout << endl << "  Â¿EstÃ¡s seguro que querÃ©s salir? (escribir si - no): ";
                         cin >> rta;
                         salir = strcasecmp(rta, afirmativo);
 
                         if(salir==0){
                             rlutil::cls();
-                            cout << endl << "  Gracias por jugar a MATHRIX, ¡esperamos que lo hayas disfrutado!" << endl;
+                            cout << endl << "  Gracias por jugar a MATHRIX, Â¡esperamos que lo hayas disfrutado!" << endl;
                         }
                         else{
                             rlutil::cls();
-                            cout << endl << "  ¡Que bueno que decidiste quedarte!" << endl;
+                            cout << endl << "  Â¡Que bueno que decidiste quedarte!" << endl;
                         }
                     }
 				}
